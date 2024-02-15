@@ -19,6 +19,6 @@ echo "Using $NAMESPACE as default oc project"
 oc project $NAMESPACE
 
 echo "Deploying apps to $NAMESPACE"
-bonfire deploy drift -n $NAMESPACE
+bonfire deploy drift -n $NAMESPACE --no-remove-resources drift --no-remove-resources system-baseline --no-remove-resources historical-system-profiles
 
 sh ./clowder/clowder-port-forward.sh
